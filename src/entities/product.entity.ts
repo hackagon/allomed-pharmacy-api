@@ -1,4 +1,4 @@
-import { Entity, Column, BaseEntity, ManyToOne, JoinColumn, PrimaryColumn } from 'typeorm';
+import { Entity, Column, BaseEntity, ManyToOne, JoinColumn, PrimaryColumn, CreateDateColumn, UpdateDateColumn } from 'typeorm';
 import { IngredientEntity } from './ingredient.entity';
 import { v4 as uuidv4 } from 'uuid';
 
@@ -15,10 +15,10 @@ export class ProductEntity extends BaseEntity {
   sku: string;
 
   @Column()
-  product_code: string;
+  code: string;
 
   @Column()
-  product_name: string;
+  name: string;
 
   @Column()
   brand_name: string;
@@ -66,4 +66,10 @@ export class ProductEntity extends BaseEntity {
     name: "ingredient_id"
   })
   ingredientId: string;
+
+  @CreateDateColumn()
+  created_at: Date;
+
+  @UpdateDateColumn()
+  updated_at: Date;
 }
