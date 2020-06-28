@@ -3,13 +3,13 @@ import { v4 as uuidv4 } from 'uuid'
 import * as _ from "lodash";
 
 @Entity()
-export class Unit extends BaseEntity {
+export class PackageUnitEntity extends BaseEntity {
   @PrimaryColumn({
     default: uuidv4()
   })
   id: string;
 
-  @Column()
+  @Column({ unique: true })
   name: string;
 
   @CreateDateColumn()
@@ -18,7 +18,7 @@ export class Unit extends BaseEntity {
   @UpdateDateColumn()
   updated_at: Date;
 
-  constructor(partial: Partial<Unit>) {
+  constructor(partial: Partial<PackageUnitEntity>) {
     super();
     _.assign(this, partial);
   }
