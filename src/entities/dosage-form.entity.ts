@@ -2,7 +2,7 @@ import { Entity, Column, PrimaryColumn, BaseEntity, CreateDateColumn, UpdateDate
 import { v4 as uuidv4 } from 'uuid'
 import * as _ from "lodash";
 
-@Entity()
+@Entity({ name: "dosage_form" })
 export class DosageFormEntity extends BaseEntity {
   @PrimaryColumn({ default: uuidv4() })
   id: string;

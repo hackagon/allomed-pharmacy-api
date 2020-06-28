@@ -2,9 +2,7 @@ import { Entity, Column, BaseEntity, ManyToOne, JoinColumn, PrimaryColumn, Creat
 import { IngredientEntity } from './ingredient.entity';
 import { v4 as uuidv4 } from 'uuid';
 
-@Entity({
-  name: "product"
-})
+@Entity({ name: "product" })
 export class ProductEntity extends BaseEntity {
   @PrimaryColumn({
     default: uuidv4()
