@@ -4,11 +4,12 @@ import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { typeOrmConfig } from './config/typeorm.config';
 import { PackageUnitModule } from './modules/package-unit.module';
+import { DosageUnitModule } from './modules/dosage-unit.module';
 
 @Module({
   imports: [
     TypeOrmModule.forRoot(typeOrmConfig),
-    PackageUnitModule
+    PackageUnitModule, DosageUnitModule
   ],
   controllers: [AppController],
   providers: [AppService],

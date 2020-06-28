@@ -35,10 +35,8 @@ export class ProductEntity extends BaseEntity {
   @Column()
   dosage_unit_id: string;
 
-  @Column({
-    name: "package_unit_id"
-  })
-  packageUnitId: string;
+  @Column()
+  package_unit_id: string;
 
   @Column()
   dosage_form_id: string;
