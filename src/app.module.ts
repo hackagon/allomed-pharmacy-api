@@ -3,9 +3,8 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { typeOrmConfig } from './config/typeorm.config';
-import { PackageUnitModule } from './modules/package-unit.module';
-import { DosageUnitModule } from './modules/dosage-unit.module';
-import { DosageFormModule } from './modules/dosage-form.module';
+import { PackageUnitModule, DosageUnitModule, DosageFormModule } from './modules';
+
 
 @Module({
   imports: [

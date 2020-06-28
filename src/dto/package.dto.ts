@@ -1,12 +1,12 @@
 import { IsNotEmpty } from "class-validator";
 
 
-export class CreateDosageFormDTO {
+export class CreatePackageDTO {
   @IsNotEmpty()
   name: string;
 }
 
-export class UpdateDosageFormDTO {
+export class UpdatePackageDTO {
   @IsNotEmpty()
   name: string;
 }
