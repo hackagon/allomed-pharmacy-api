@@ -12,4 +12,4 @@ import { ManufacturingEnterpriseService } from "src/services/manufacturing-enter
   providers: [ManufacturingEnterpriseService],
   exports: [ManufacturingEnterpriseService]
 })
-export class DosageFormModule { }
+export class ManufacturingEnterprise { }
