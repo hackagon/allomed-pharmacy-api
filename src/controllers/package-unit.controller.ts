@@ -1,36 +1,35 @@
-import { Controller, Get, Post, Patch, Delete, Param, Body } from "@nestjs/common";
+import { Controller } from "@nestjs/common";
 import { PackageUnitService } from "src/services/package-unit.service";
+import { Crud } from "@nestjsx/crud";
 import { PackageUnitEntity } from "src/entities/package-unit.entity";
-import { CreateDosageUnitDTO } from "src/dto/dosage-unit.dto";
+import { CreatePackageUnitDTO, UpdatePackageUnitDTO } from '../dto/package-unit.dto';
 
+@Crud({
+  model: {
+    type: PackageUnitEntity,
+  },
+  params: {
+    id: {
+      field: "id",
+      type: "uuid",
+      primary: true
+    }
+  },
+  dto: {
+    create: CreatePackageUnitDTO,
+    update: UpdatePackageUnitDTO
+  },
+  routes: {
+    deleteOneBase: {
+      interceptors: [],
+      decorators: [],
+      returnDeleted: true,
+    },
+  }
+})
 @Controller("/package-units")
 export class PackageUnitController {
   constructor(
-    private unitService: PackageUnitService
+    private service: PackageUnitService
   ) { }
-
-  @Get("/")
-  async getUnits(): Promise<PackageUnitEntity[]> {
-    return await this.unitService.getUnits()
-  }
-
-  @Get("/:id")
-  async getUnitById(@Param() id: string): Promise<PackageUnitEntity> {
-    return await this.unitService.getUnitById(id)
-  }
-
-  @Post("/")
-  async createUnit(@Body() data: CreateDosageUnitDTO): Promise<PackageUnitEntity> {
-    return await this.unitService.createUnit(data)
-  }
-
-  @Patch("/:id")
-  async updateUnitById(@Param() id: string, @Body() data: CreateDosageUnitDTO): Promise<PackageUnitEntity> {
-    return await this.unitService.updateUnitById(id, data)
-  }
-
-  @Delete("/:id")
-  async deleteUnitById(@Param() id: string): Promise<PackageUnitEntity> {
-    return await this.unitService.deleteUnitById(id)
-  }
 }
