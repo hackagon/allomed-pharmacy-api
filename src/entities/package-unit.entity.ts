@@ -12,11 +12,11 @@ export class PackageUnitEntity extends BaseEntity {
   @Column({ unique: true })
   name: string;
 
-  @CreateDateColumn({ name: "created_at" })
-  createdAt: Date;
+  @CreateDateColumn()
+  created_at: Date;
 
-  @UpdateDateColumn({ name: "updated_at" })
-  updatedAt: Date;
+  @UpdateDateColumn()
+  updated_at: Date;
 
   constructor(partial: Partial<PackageUnitEntity>) {
     super();

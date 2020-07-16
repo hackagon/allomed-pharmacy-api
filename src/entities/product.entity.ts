@@ -19,10 +19,10 @@ export class ProductEntity extends BaseEntity {
   name: string;
 
   @Column({ name: "brand_name" })
-  brandName: string;
+  brand_name: string;
 
   @Column({ name: "sub_brand_name" })
-  subBrandName: string;
+  sub_brand_name: string;
 
   @ManyToOne(type => IngredientEntity, ingredient => ingredient.products)
   @JoinColumn({
@@ -30,39 +30,39 @@ export class ProductEntity extends BaseEntity {
   })
   apiId: string;
 
-  @Column({ name: "dosage_quantity" })
-  dosageQuantity: number;
+  @Column()
+  dosage_quantity: number;
 
-  @Column({ name: "dosage_unit_id" })
-  dosageUnitId: string;
+  @Column()
+  dosage_unit_id: string;
 
-  @Column({ name: "package_unit_id" })
-  packageUnitId: string;
+  @Column()
+  package_unit_id: string;
 
-  @Column({ name: "dosage_form_id" })
-  dosageFormId: string;
+  @Column()
+  dosage_form_id: string;
 
-  @Column({ name: "package_id" })
+  @Column() // unit_id ???
   packageId: string;
 
-  @Column({ name: "manufacturing_enterprise_id" })
-  manufacturingEnterpriseId: string;
+  @Column()
+  manufacturing_enterprise_id: string;
 
-  @Column({ name: "manufacturing_country_id" })
-  manufacturingCountryId: string;
+  @Column()
+  manufacturing_country_id: string;
 
-  @Column({ name: "pharmaceutical_classification_id" })
-  pharmaceuticalClassificationId: string;
+  @Column() // product_classification ????
+  pharmaceutical_classification_id: string;
 
-  @Column({ name: "store_id" })
-  storeId: string;
+  @Column() // ????
+  store_id: string;
 
-  @Column({ name: "national_product_code" })
-  nationalProductCode: string;
+  @Column()
+  national_product_code: string;
 
-  @CreateDateColumn({ name: "created_at" })
-  createdAt: Date;
+  @CreateDateColumn()
+  created_at: Date;
 
-  @UpdateDateColumn({ name: "updated_at" })
-  updatedAt: Date;
+  @UpdateDateColumn()
+  updated_at: Date;
 }
