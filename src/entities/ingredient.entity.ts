@@ -18,7 +18,7 @@ export class IngredientEntity extends BaseEntity {
   })
   usage: string;
 
-  @OneToMany(type => ProductEntity, product => product.apiId, {
+  @OneToMany(type => ProductEntity, product => product.api_id, {
     cascade: ["insert", "update", "remove"]
   })
   products: ProductEntity[]

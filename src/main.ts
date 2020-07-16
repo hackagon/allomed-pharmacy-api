@@ -1,9 +1,13 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
-import { ValidationPipe, BadRequestException } from "@nestjs/common";
-import { ValidationError, useContainer } from 'class-validator';
+import { ValidationPipe, BadRequestException, Next } from "@nestjs/common";
+import { ValidationError } from 'class-validator';
+import * as _ from "lodash";
 
 async function bootstrap() {
+
+  global._ = _;
+
   const app = await NestFactory.create(AppModule, {
     logger: ["error", "warn"]
   });

@@ -18,17 +18,15 @@ export class ProductEntity extends BaseEntity {
   @Column()
   name: string;
 
-  @Column({ name: "brand_name" })
+  @Column()
   brand_name: string;
 
-  @Column({ name: "sub_brand_name" })
+  @Column()
   sub_brand_name: string;
 
   @ManyToOne(type => IngredientEntity, ingredient => ingredient.products)
-  @JoinColumn({
-    name: "api_id"
-  })
-  apiId: string;
+  @JoinColumn()
+  api_id: string;
 
   @Column()
   dosage_quantity: number;
@@ -43,7 +41,7 @@ export class ProductEntity extends BaseEntity {
   dosage_form_id: string;
 
   @Column() // unit_id ???
-  packageId: string;
+  package_id: string;
 
   @Column()
   manufacturing_enterprise_id: string;
@@ -52,13 +50,22 @@ export class ProductEntity extends BaseEntity {
   manufacturing_country_id: string;
 
   @Column() // product_classification ????
-  pharmaceutical_classification_id: string;
-
-  @Column() // ????
-  store_id: string;
+  product_classification_id: string;
 
   @Column()
   national_product_code: string;
+
+  @Column()
+  color_id: string;
+
+  @Column()
+  shape_id: string;
+
+  @Column()
+  odor_id: string;
+
+  @Column()
+  volume_id: string;
 
   @CreateDateColumn()
   created_at: Date;

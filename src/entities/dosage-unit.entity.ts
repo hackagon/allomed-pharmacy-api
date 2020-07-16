@@ -8,6 +8,12 @@ export class DosageUnitEntity extends BaseEntity {
   id: string;
 
   @Column({ unique: true })
+  label: string;
+
+  @Column({ unique: true })
+  code: string;
+
+  @Column({ unique: true })
   name: string;
 
   @CreateDateColumn()

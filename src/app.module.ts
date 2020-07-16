@@ -7,13 +7,15 @@ import {
   PackageUnitModule, DosageUnitModule, DosageFormModule,
   ManufacturingEnterprise, ManufacturingCountry
 } from './modules';
+import { CSVToMySQL } from './modules/csv-to-mysql.module';
 
 
 @Module({
   imports: [
     TypeOrmModule.forRoot(typeOrmConfig),
     PackageUnitModule, DosageUnitModule, DosageFormModule,
-    ManufacturingEnterprise, ManufacturingCountry
+    ManufacturingEnterprise, ManufacturingCountry,
+    CSVToMySQL
   ],
   controllers: [AppController],
   providers: [AppService],
