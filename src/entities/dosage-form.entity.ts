@@ -8,13 +8,13 @@ export class DosageFormEntity extends BaseEntity {
   id: string;
 
   @Column({ unique: true })
-  label: string;
-
-  @Column({ unique: true })
   code: string;
 
   @Column({ unique: true })
-  name: string;
+  en_name: string;
+
+  @Column({ unique: true })
+  vn_name: string;
 
   @CreateDateColumn()
   created_at: Date;
