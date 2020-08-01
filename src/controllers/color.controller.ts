@@ -27,7 +27,7 @@ import { CreateColorDTO, UpdateColorDTO } from 'src/dto/color.dto';
     },
   },
 })
-@Controller('color')
+@Controller('colors')
 export class ColorController implements CrudController<ColorEntity> {
   constructor(public service: ColorService) {}
 }

@@ -7,11 +7,11 @@ console.log("type", type)
 
 export const typeOrmConfig: TypeOrmModuleOptions = {
   type: "mysql",
-  host: "localhost",
-  port: 3306,
-  username: "root",
-  password: "Pharmacy2550",
-  database: "allomed",
+  host: "",
+  port: 0,
+  username: "",
+  password: "",
+  database: "",
   entities: [__dirname + "/../entities/*.entity.{js,ts}"],
   synchronize: true
 }
