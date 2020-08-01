@@ -4,20 +4,27 @@ import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { typeOrmConfig } from './config/typeorm.config';
 import {
-  PackageUnitModule, DosageUnitModule, DosageFormModule,
-  ManufacturingEnterprise, ManufacturingCountry
+  PackageUnitModule,
+  DosageUnitModule,
+  DosageFormModule,
+  ManufacturingEnterprise,
+  ManufacturingCountry,
+  ColorModule,
 } from './modules';
 import { CSVToMySQL } from './modules/csv-to-mysql.module';
-
 
 @Module({
   imports: [
     TypeOrmModule.forRoot(typeOrmConfig),
-    PackageUnitModule, DosageUnitModule, DosageFormModule,
-    ManufacturingEnterprise, ManufacturingCountry,
-    CSVToMySQL
+    PackageUnitModule,
+    DosageUnitModule,
+    DosageFormModule,
+    ManufacturingEnterprise,
+    ManufacturingCountry,
+    ColorModule,
+    CSVToMySQL,
   ],
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule { }
+export class AppModule {}
