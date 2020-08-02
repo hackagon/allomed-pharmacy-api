@@ -10,6 +10,7 @@ import {
   ManufacturingEnterprise,
   ManufacturingCountry,
   ColorModule,
+  FlavorModule,
 } from './modules';
 import { CSVToMySQL } from './modules/csv-to-mysql.module';
 
@@ -22,6 +23,7 @@ import { CSVToMySQL } from './modules/csv-to-mysql.module';
     ManufacturingEnterprise,
     ManufacturingCountry,
     ColorModule,
+    FlavorModule,
     CSVToMySQL,
   ],
   controllers: [AppController],
