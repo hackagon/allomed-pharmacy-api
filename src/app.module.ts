@@ -12,6 +12,7 @@ import {
   ColorModule,
   FlavorModule,
   VolumeModule,
+  ShapeModule,
 } from './modules';
 import { CSVToMySQL } from './modules/csv-to-mysql.module';
 
@@ -26,6 +27,7 @@ import { CSVToMySQL } from './modules/csv-to-mysql.module';
     ColorModule,
     FlavorModule,
     VolumeModule,
+    ShapeModule,
     CSVToMySQL,
   ],
   controllers: [AppController],

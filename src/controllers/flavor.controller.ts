@@ -2,7 +2,7 @@ import { Controller } from '@nestjs/common';
 import { CrudController, Crud } from '@nestjsx/crud';
 import { FlavorEntity } from 'src/entities/flavor.entity';
 import { FlavorService } from 'src/services/flavor.service';
-import { CreateFlavorDTO, UpdateFlavorDTO } from 'src/dto/falvor.dto';
+import { CreateFlavorDTO, UpdateFlavorDTO } from 'src/dto/flavor.dto';
 
 @Crud({
   model: {
