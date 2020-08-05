@@ -1,7 +1,7 @@
-INSERT IGNORE INTO dosage_unit (id, code, en_name, vn_name) VALUES ("ebeb470e-1ad4-4948-96c8-85872aa5b256", "mg", "undefined", "undefined");
-INSERT IGNORE INTO dosage_unit (id, code, en_name, vn_name) VALUES ("87a8bc36-04ac-4301-9790-5059f1e617ac", "ml", "undefined", "undefined");
-INSERT IGNORE INTO dosage_unit (id, code, en_name, vn_name) VALUES ("8bf60da6-794c-4aa6-9ca8-ed04b01eea05", "ui", "undefined", "undefined");
-INSERT IGNORE INTO dosage_unit (id, code, en_name, vn_name) VALUES ("50a0f480-1d5c-4e78-98c4-c0b4946528ce", "percent", "undefined", "undefined");
-INSERT IGNORE INTO dosage_unit (id, code, en_name, vn_name) VALUES ("44e86a5a-32e0-4f95-897c-6072f0d7bbad", "m", "undefined", "undefined");
-INSERT IGNORE INTO dosage_unit (id, code, en_name, vn_name) VALUES ("e0f0e51d-36b0-435c-b9fc-15112c2ce905", "cc", "undefined", "undefined");
-INSERT IGNORE INTO dosage_unit (id, code, en_name, vn_name) VALUES ("a0083ca8-4a16-4cc5-8b1b-c9460045777f", "mcg", "undefined", "undefined")
+INSERT IGNORE INTO dosage_unit (id, code, en_name, vn_name) VALUES ("a8f335db-ff54-434f-a1f9-4194d6d2cfd1", "mg", "undefined", "undefined");
+INSERT IGNORE INTO dosage_unit (id, code, en_name, vn_name) VALUES ("a890de2b-8945-4389-84fb-85a621fdc634", "ml", "undefined", "undefined");
+INSERT IGNORE INTO dosage_unit (id, code, en_name, vn_name) VALUES ("159cc858-315f-4938-97ce-af9d355fd524", "ui", "undefined", "undefined");
+INSERT IGNORE INTO dosage_unit (id, code, en_name, vn_name) VALUES ("8bfe36a3-909f-41cf-a846-6fae0c2d4a2b", "percent", "undefined", "undefined");
+INSERT IGNORE INTO dosage_unit (id, code, en_name, vn_name) VALUES ("d2459ee3-c4a2-4f37-9963-775a9f84d5a1", "m", "undefined", "undefined");
+INSERT IGNORE INTO dosage_unit (id, code, en_name, vn_name) VALUES ("d3ec7aa8-8ef3-464c-83d9-98f356d22889", "cc", "undefined", "undefined");
+INSERT IGNORE INTO dosage_unit (id, code, en_name, vn_name) VALUES ("7002a423-a1f3-4b3b-baaa-f84d39514235", "mcg", "undefined", "undefined")

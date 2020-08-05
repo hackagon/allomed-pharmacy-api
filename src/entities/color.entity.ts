@@ -9,7 +9,7 @@ export class ColorEntity extends BaseEntity {
   @Column({ unique: true })
   code: string;
 
-  @Column({ unique: true })
+  @Column()
   en_name: string;
 
   @Column({ unique: true })
