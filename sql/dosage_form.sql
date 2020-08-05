@@ -1,6 +1,6 @@
-INSERT IGNORE INTO dosage_form (id, label, code, name) VALUES ("a94ce850-bf8c-4c4c-a7fe-d2b2487672f5", "dung dịch uống", "dung_dich_uong", "dung dịch uống");
-INSERT IGNORE INTO dosage_form (id, label, code, name) VALUES ("06b4dcaa-cd68-44ae-bb4f-1fcf154543b9", "viên nén", "vien_nen", "viên nén");
-INSERT IGNORE INTO dosage_form (id, label, code, name) VALUES ("fc1da454-cfa2-4c7d-a4ac-9be4042d819d", "dung dịch truyền tĩnh", "dung_dich_truyen_tinh", "dung dịch truyền tĩnh");
-INSERT IGNORE INTO dosage_form (id, label, code, name) VALUES ("f635316c-d148-4c3d-bdde-15c283609c5f", "viên nén bao phim", "vien_nen_bao_phim", "viên nén bao phim");
-INSERT IGNORE INTO dosage_form (id, label, code, name) VALUES ("bd6daa66-7d17-4c7d-add4-c80f8d3e9ac4", "viên nén bao tan trong ruột", "vien_nen_bao_tan_trong_ruot", "viên nén bao tan trong ruột");
-INSERT IGNORE INTO dosage_form (id, label, code, name) VALUES ("c3415553-f5b6-470b-8317-604435d18e31", "viên nang cứng", "vien_nang_cung", "viê nang cứng")
+INSERT IGNORE INTO dosage_form (id, code, en_name, vn_name) VALUES ("3a20e5c3-ea1a-45f0-a85a-b01a33201315", "dung_dich_uong", "undefined", "undefined");
+INSERT IGNORE INTO dosage_form (id, code, en_name, vn_name) VALUES ("8d89b4fb-9df2-4c8a-9f5b-6ddab6b5d7ed", "vien_nen", "undefined", "undefined");
+INSERT IGNORE INTO dosage_form (id, code, en_name, vn_name) VALUES ("f23085f9-bdd7-4435-a713-d7f355b5c984", "dung_dich_truyen_tinh", "undefined", "undefined");
+INSERT IGNORE INTO dosage_form (id, code, en_name, vn_name) VALUES ("dbf9e1d1-8374-4c4c-85e4-2128f7dbc54f", "vien_nen_bao_phim", "undefined", "undefined");
+INSERT IGNORE INTO dosage_form (id, code, en_name, vn_name) VALUES ("d2fd5264-8f1e-4e07-890f-cbdce242cba6", "vien_nen_bao_tan_trong_ruot", "undefined", "undefined");
+INSERT IGNORE INTO dosage_form (id, code, en_name, vn_name) VALUES ("f76e5e07-fa44-4b2f-a1ea-f45ac52ca438", "vien_nang_cung", "undefined", "undefined")

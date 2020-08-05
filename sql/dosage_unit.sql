@@ -1,7 +1,7 @@
-INSERT IGNORE INTO dosage_unit (id, label, code, name) VALUES ("10e23f9a-2a6e-4771-8960-c3f4b6767ba0", "mg", "mg", "milligram");
-INSERT IGNORE INTO dosage_unit (id, label, code, name) VALUES ("9680353b-62a4-446a-a578-a5db5039e1a1", "ml", "ml", "milliliter");
-INSERT IGNORE INTO dosage_unit (id, label, code, name) VALUES ("15431b40-79ca-4a88-b3ab-9bbb15e31cba", "UI", "ui", "international unit");
-INSERT IGNORE INTO dosage_unit (id, label, code, name) VALUES ("2e700101-8078-4745-9780-b731d1344f29", "'%'", "percent", "percent");
-INSERT IGNORE INTO dosage_unit (id, label, code, name) VALUES ("31d39fe5-b990-469e-823f-572ea23a9962", "m", "m", "meter");
-INSERT IGNORE INTO dosage_unit (id, label, code, name) VALUES ("89eace92-4fe5-44dc-bc2a-33a3e0703cb0", "cc", "cc", "cubic centimeter");
-INSERT IGNORE INTO dosage_unit (id, label, code, name) VALUES ("be28fee8-c603-4048-9b2f-afb31c6f04b8", "mcg", "mcg", "microgram")
+INSERT IGNORE INTO dosage_unit (id, code, en_name, vn_name) VALUES ("ebeb470e-1ad4-4948-96c8-85872aa5b256", "mg", "undefined", "undefined");
+INSERT IGNORE INTO dosage_unit (id, code, en_name, vn_name) VALUES ("87a8bc36-04ac-4301-9790-5059f1e617ac", "ml", "undefined", "undefined");
+INSERT IGNORE INTO dosage_unit (id, code, en_name, vn_name) VALUES ("8bf60da6-794c-4aa6-9ca8-ed04b01eea05", "ui", "undefined", "undefined");
+INSERT IGNORE INTO dosage_unit (id, code, en_name, vn_name) VALUES ("50a0f480-1d5c-4e78-98c4-c0b4946528ce", "percent", "undefined", "undefined");
+INSERT IGNORE INTO dosage_unit (id, code, en_name, vn_name) VALUES ("44e86a5a-32e0-4f95-897c-6072f0d7bbad", "m", "undefined", "undefined");
+INSERT IGNORE INTO dosage_unit (id, code, en_name, vn_name) VALUES ("e0f0e51d-36b0-435c-b9fc-15112c2ce905", "cc", "undefined", "undefined");
+INSERT IGNORE INTO dosage_unit (id, code, en_name, vn_name) VALUES ("a0083ca8-4a16-4cc5-8b1b-c9460045777f", "mcg", "undefined", "undefined")

@@ -1,6 +1,6 @@
-INSERT IGNORE INTO product_classification (id, label, code, name) VALUES ("a3a37c05-966f-48c4-ad3c-02b10b39b50b", "Thuốc tân dược", "tuoc_tan_duoc", "Thuốc tân dược");
-INSERT IGNORE INTO product_classification (id, label, code, name) VALUES ("c1afe7c5-b949-4513-96d8-7e259e8233bb", "Vật tư y tế", "vat_tu_y_te", "Vật tư y tế");
-INSERT IGNORE INTO product_classification (id, label, code, name) VALUES ("ab048507-6910-4b79-af1b-1897181e8def", "Mỹ phẩm", "my_pham", "Mỹ phẩm");
-INSERT IGNORE INTO product_classification (id, label, code, name) VALUES ("f77f9c03-bc99-4414-aeac-d23931f78470", "Thuốc kiểm soát đặc biệt", "thuoc_kiem_soat_dac_biet", "Thuốc kiểm soát đặc biệt");
-INSERT IGNORE INTO product_classification (id, label, code, name) VALUES ("e3a313f4-5534-4cb6-94ff-6ab88dfd6b4f", "Thuốc độc", "thuoc_doc", "Thuốc độc");
-INSERT IGNORE INTO product_classification (id, label, code, name) VALUES ("a216afb2-8b3a-450b-8c2c-45554c0daff8", "Thuốc bình ổn giá", "thuoc_binh_on_gia", "Thuốc bình ổn giá")
+INSERT IGNORE INTO product_classification (id, code, en_name, vn_name) VALUES ("3046bf88-1128-411d-8b50-7506b0b6634d", "tuoc_tan_duoc", "undefined", "undefined");
+INSERT IGNORE INTO product_classification (id, code, en_name, vn_name) VALUES ("59d7ea9e-4784-43c3-ad27-e15cc569249c", "vat_tu_y_te", "undefined", "undefined");
+INSERT IGNORE INTO product_classification (id, code, en_name, vn_name) VALUES ("36c6c53e-8720-4b7a-8a51-715ced301943", "my_pham", "undefined", "undefined");
+INSERT IGNORE INTO product_classification (id, code, en_name, vn_name) VALUES ("be6b7ef8-77ac-4ee5-8036-e709959cfed3", "thuoc_kiem_soat_dac_biet", "undefined", "undefined");
+INSERT IGNORE INTO product_classification (id, code, en_name, vn_name) VALUES ("c1389898-b661-437c-942e-5ead8a1e09f1", "thuoc_doc", "undefined", "undefined");
+INSERT IGNORE INTO product_classification (id, code, en_name, vn_name) VALUES ("868e801c-9870-49c9-8d4a-2595c3f6dd5c", "thuoc_binh_on_gia", "undefined", "undefined")
