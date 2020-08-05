@@ -27,7 +27,7 @@ import { CreateShapeDTO, UpdateShapeDTO } from 'src/dto/shape.dto';
     },
   },
 })
-@Controller('shape')
+@Controller('shapes')
 export class ShapeController implements CrudController<ShapeEntity> {
   constructor(public service: ShapeService) {}
 }

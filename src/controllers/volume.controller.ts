@@ -1,12 +1,12 @@
 import { Controller } from '@nestjs/common';
 import { CrudController, Crud } from '@nestjsx/crud';
-import { VolumeEntiry } from 'src/entities/volume.entity';
+import { VolumeEntity } from 'src/entities/volume.entity';
 import { VolumeService } from 'src/services/volume.service';
 import { CreateVolumeDTO, UpdateVolumeDTO } from 'src/dto/volume.dto';
 
 @Crud({
   model: {
-    type: VolumeEntiry,
+    type: VolumeEntity,
   },
   params: {
     id: {
@@ -28,6 +28,6 @@ import { CreateVolumeDTO, UpdateVolumeDTO } from 'src/dto/volume.dto';
   },
 })
 @Controller('volumes')
-export class VolumeController implements CrudController<VolumeEntiry> {
+export class VolumeController implements CrudController<VolumeEntity> {
   constructor(public service: VolumeService) {}
 }

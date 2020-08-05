@@ -1,11 +1,11 @@
 import { Injectable } from '@nestjs/common';
 import { TypeOrmCrudService } from '@nestjsx/crud-typeorm';
-import { VolumeEntiry } from 'src/entities/volume.entity';
+import { VolumeEntity } from 'src/entities/volume.entity';
 import { InjectRepository } from '@nestjs/typeorm';
 
 @Injectable()
-export class VolumeService extends TypeOrmCrudService<VolumeEntiry> {
-  constructor(@InjectRepository(VolumeEntiry) repo) {
+export class VolumeService extends TypeOrmCrudService<VolumeEntity> {
+  constructor(@InjectRepository(VolumeEntity) repo) {
     super(repo);
   }
 }

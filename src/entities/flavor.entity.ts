@@ -8,4 +8,10 @@ export class FlavorEntity extends BaseEntity {
 
   @Column({ unique: true })
   code: string;
+
+  @Column({ unique: true })
+  en_name: string;
+
+  @Column({ unique: true })
+  vn_name: string;
 }

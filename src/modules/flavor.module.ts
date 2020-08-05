@@ -2,7 +2,7 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { FlavorEntity } from 'src/entities/flavor.entity';
 import { FlavorService } from 'src/services/flavor.service';
-import { FlavorController } from 'src/controllers';
+import { FlavorController } from 'src/controllers/flavor.controller';
 
 @Module({
   imports: [TypeOrmModule.forFeature([FlavorEntity])],

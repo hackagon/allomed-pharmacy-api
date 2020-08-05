@@ -1,11 +1,11 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { VolumeEntiry } from 'src/entities/volume.entity';
+import { VolumeEntity } from 'src/entities/volume.entity';
 import { VolumeService } from 'src/services/volume.service';
-import { VolumeController } from 'src/controllers';
+import { VolumeController } from 'src/controllers/volume.controller';
 
 @Module({
-  imports: [TypeOrmModule.forFeature([VolumeEntiry])],
+  imports: [TypeOrmModule.forFeature([VolumeEntity])],
   providers: [VolumeService],
   controllers: [VolumeController],
   exports: [VolumeService],

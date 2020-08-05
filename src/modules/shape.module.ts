@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { ShapeController } from 'src/controllers';
+import { ShapeController } from 'src/controllers/shape.controller';
 import { ShapeService } from 'src/services/shape.service';
 import { ShapeEntity } from 'src/entities/shape.entity';
 
