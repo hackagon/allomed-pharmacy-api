@@ -1,11 +1,24 @@
-import { Entity, Column, BaseEntity, ManyToOne, JoinColumn, PrimaryColumn, CreateDateColumn, UpdateDateColumn } from 'typeorm';
+import {
+  Entity,
+  Column,
+  BaseEntity,
+  ManyToOne,
+  JoinColumn,
+  PrimaryColumn,
+  CreateDateColumn,
+  UpdateDateColumn,
+} from 'typeorm';
 import { IngredientEntity } from './ingredient.entity';
 import { v4 as uuidv4 } from 'uuid';
+import { ColorEntity } from './color.entity';
+import { VolumeEntity } from './volume.entity';
+import { ShapeEntity } from './shape.entity';
+import { FlavorEntity } from './flavor.entity';
 
-@Entity({ name: "product" })
+@Entity({ name: 'product' })
 export class ProductEntity extends BaseEntity {
   @PrimaryColumn({
-    default: uuidv4()
+    default: uuidv4(),
   })
   id: string;
 
@@ -24,7 +37,10 @@ export class ProductEntity extends BaseEntity {
   @Column()
   sub_brand_name: string;
 
-  @ManyToOne(type => IngredientEntity, ingredient => ingredient.products)
+  @ManyToOne(
+    type => IngredientEntity,
+    ingredient => ingredient.products,
+  )
   @JoinColumn()
   api_id: string;
 
@@ -62,6 +78,9 @@ export class ProductEntity extends BaseEntity {
   shape_id: string;
 
   @Column()
+  flavor_id: string;
+
+  @Column()
   odor_id: string;
 
   @Column()
@@ -72,4 +91,28 @@ export class ProductEntity extends BaseEntity {
 
   @UpdateDateColumn()
   updated_at: Date;
+
+  @ManyToOne(
+    type => ColorEntity,
+    c => c.products,
+  )
+  color?: ColorEntity;
+
+  @ManyToOne(
+    type => VolumeEntity,
+    v => v.products,
+  )
+  volume?: VolumeEntity;
+
+  @ManyToOne(
+    type => ShapeEntity,
+    s => s.products,
+  )
+  shape?: ShapeEntity;
+
+  @ManyToOne(
+    type => FlavorEntity,
+    f => f.products,
+  )
+  flavor?: FlavorEntity;
 }

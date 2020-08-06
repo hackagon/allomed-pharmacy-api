@@ -1,5 +1,7 @@
-import { BaseEntity, PrimaryColumn, Column, Entity } from 'typeorm';
+import { BaseEntity, PrimaryColumn, Column, Entity, OneToMany } from 'typeorm';
 import { v4 as uuidv4 } from 'uuid';
+import { ProductEntity } from './product.entity';
+import { Type } from 'class-transformer';
 
 @Entity({ name: 'flavor' })
 export class FlavorEntity extends BaseEntity {
@@ -14,4 +16,11 @@ export class FlavorEntity extends BaseEntity {
 
   @Column({ unique: true })
   vn_name: string;
+
+  @OneToMany(
+    type => ProductEntity,
+    p => p.flavor_id,
+  )
+  @Type(type => ProductEntity)
+  products: ProductEntity[];
 }
