@@ -5,3 +5,4 @@ export * from './color.controller';
 export * from './flavor.controller';
 export * from './volume.controller';
 export * from './shape.controller';
+export * from './user.controller';

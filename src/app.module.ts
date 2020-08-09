@@ -13,6 +13,7 @@ import {
   FlavorModule,
   VolumeModule,
   ShapeModule,
+  UserModule,
 } from './modules';
 import { CSVToMySQL } from './modules/csv-to-mysql.module';
 
@@ -28,6 +29,7 @@ import { CSVToMySQL } from './modules/csv-to-mysql.module';
     FlavorModule,
     VolumeModule,
     ShapeModule,
+    UserModule,
     CSVToMySQL,
   ],
   controllers: [AppController],

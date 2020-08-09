@@ -8,3 +8,4 @@ export * from './color.module';
 export * from './flavor.module';
 export * from './volume.module';
 export * from './shape.module';
+export * from './user.module';
