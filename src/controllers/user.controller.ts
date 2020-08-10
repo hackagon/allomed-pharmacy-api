@@ -43,16 +43,16 @@ export class UserController implements CrudController<UserEntity> {
   }
 
   @Override('createOneBase')
-  async signup(
+  async createUser(
     @ParsedBody() userCredentialDTO: UserCredentialDTO,
   ): Promise<void> {
-    return this.service.signup(userCredentialDTO);
+    return this.service.createUser(userCredentialDTO);
   }
 
-  @Post('signin')
-  async signin(
+  @Post('login')
+  async login(
     @Body() userCredentialDTO: UserCredentialDTO,
   ): Promise<{ accessToken: string }> {
-    return this.service.signin(userCredentialDTO);
+    return this.service.login(userCredentialDTO);
   }
 }

@@ -1,4 +1,12 @@
-import { BaseEntity, Entity, PrimaryColumn, Column, Unique } from 'typeorm';
+import {
+  BaseEntity,
+  Entity,
+  PrimaryColumn,
+  Column,
+  Unique,
+  BeforeInsert,
+  BeforeUpdate,
+} from 'typeorm';
 import { v4 as uuidv4 } from 'uuid';
 import * as bcrypt from 'bcrypt';
 
@@ -17,12 +25,11 @@ export class UserEntity extends BaseEntity {
   @Column()
   full_name: string;
 
-  @Column()
-  salt: string;
+  @BeforeInsert()
+  @BeforeUpdate()
+  async hashPassword(): Promise<void> {
+    const salt = await bcrypt.genSalt();
 
-  async validatePassword(password: string): Promise<boolean> {
-    const hash = await bcrypt.hash(password, this.salt);
-
-    return hash === this.password;
+    this.password = await bcrypt.hash(this.password, salt);
   }
 }

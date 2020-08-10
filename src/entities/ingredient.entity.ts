@@ -1,25 +1,17 @@
-import { Entity, PrimaryGeneratedColumn, Column, BaseEntity, OneToMany } from 'typeorm';
-import { ProductEntity } from './product.entity';
+import { BaseEntity, Entity, PrimaryColumn, Column } from 'typeorm';
+import { v4 as uuidv4 } from 'uuid';
 
-@Entity({
-  name: "ingredient"
-})
+@Entity({ name: 'ingredient' })
 export class IngredientEntity extends BaseEntity {
-  @PrimaryGeneratedColumn()
-  id: number;
+  @PrimaryColumn({ default: uuidv4() })
+  id: string;
 
-  @Column({
-    name: "name"
-  })
+  @Column()
   name: string;
 
-  @Column({
-    name: "usage"
-  })
-  usage: string;
+  @Column()
+  other_name: string;
 
-  @OneToMany(type => ProductEntity, product => product.api_id, {
-    cascade: ["insert", "update", "remove"]
-  })
-  products: ProductEntity[]
+  @Column()
+  unii: string;
 }
