@@ -38,13 +38,6 @@ export class ProductEntity extends BaseEntity {
   @Column()
   sub_brand_name: string;
 
-  // @ManyToOne(
-  //   type => IngredientEntity,
-  //   ingredient => ingredient.products,
-  // )
-  @JoinColumn()
-  api_id: string;
-
   @Column()
   dosage_quantity: number;
 
