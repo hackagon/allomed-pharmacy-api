@@ -1,11 +1,10 @@
-import { BaseEntity, Entity, PrimaryColumn, Column, OneToMany } from 'typeorm';
-import { v4 as uuidv4 } from 'uuid';
+import { BaseEntity, Entity, Column, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
 import { ProductEntity } from './product.entity';
 import { Type } from 'class-transformer';
 
 @Entity({ name: 'color' })
 export class ColorEntity extends BaseEntity {
-  @PrimaryColumn({ default: uuidv4() })
+  @PrimaryGeneratedColumn('uuid')
   id: string;
 
   @Column({ unique: true })

@@ -1,11 +1,16 @@
-import { BaseEntity, PrimaryColumn, Column, Entity, OneToMany } from 'typeorm';
-import { v4 as uuidv4 } from 'uuid';
+import {
+  BaseEntity,
+  Column,
+  Entity,
+  OneToMany,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
 import { ProductEntity } from './product.entity';
 import { Type } from 'class-transformer';
 
 @Entity({ name: 'shape' })
 export class ShapeEntity extends BaseEntity {
-  @PrimaryColumn({ default: uuidv4() })
+  @PrimaryGeneratedColumn('uuid')
   id: string;
 
   @Column({ unique: true })

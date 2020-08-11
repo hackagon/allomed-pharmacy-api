@@ -10,3 +10,4 @@ export * from './volume.module';
 export * from './shape.module';
 export * from './user.module';
 export * from './ingredient.module';
+export * from './pharmacological-class.module';

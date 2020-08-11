@@ -7,9 +7,9 @@ import {
   PrimaryColumn,
   CreateDateColumn,
   UpdateDateColumn,
+  PrimaryGeneratedColumn,
 } from 'typeorm';
 import { IngredientEntity } from './ingredient.entity';
-import { v4 as uuidv4 } from 'uuid';
 import { ColorEntity } from './color.entity';
 import { VolumeEntity } from './volume.entity';
 import { ShapeEntity } from './shape.entity';
@@ -17,9 +17,7 @@ import { FlavorEntity } from './flavor.entity';
 
 @Entity({ name: 'product' })
 export class ProductEntity extends BaseEntity {
-  @PrimaryColumn({
-    default: uuidv4(),
-  })
+  @PrimaryGeneratedColumn('uuid')
   id: string;
 
   @Column()

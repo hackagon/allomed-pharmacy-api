@@ -1,10 +1,9 @@
-import { Entity, Column, PrimaryColumn, BaseEntity, CreateDateColumn, UpdateDateColumn } from "typeorm";
-import { v4 as uuidv4 } from 'uuid'
+import { Entity, Column, BaseEntity, CreateDateColumn, UpdateDateColumn, PrimaryGeneratedColumn } from "typeorm";
 import * as _ from "lodash";
 
 @Entity({ name: "dosage_form" })
 export class DosageFormEntity extends BaseEntity {
-  @PrimaryColumn({ default: uuidv4() })
+  @PrimaryGeneratedColumn('uuid')
   id: string;
 
   @Column({ unique: true })

@@ -1,9 +1,9 @@
-import { BaseEntity, Entity, PrimaryColumn, Column } from 'typeorm';
-import { v4 as uuidv4 } from 'uuid';
+import { BaseEntity, Entity, Column, Unique, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity({ name: 'ingredient' })
+@Unique(['name', 'other_name', 'unii'])
 export class IngredientEntity extends BaseEntity {
-  @PrimaryColumn({ default: uuidv4() })
+  @PrimaryGeneratedColumn('uuid')
   id: string;
 
   @Column()

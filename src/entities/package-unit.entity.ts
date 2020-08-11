@@ -1,12 +1,16 @@
-import { Entity, PrimaryColumn, CreateDateColumn, UpdateDateColumn, Column, BaseEntity } from "typeorm";
-import { v4 as uuidv4 } from 'uuid'
-import * as _ from "lodash";
+import {
+  Entity,
+  CreateDateColumn,
+  UpdateDateColumn,
+  Column,
+  BaseEntity,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
+import * as _ from 'lodash';
 
-@Entity({ name: "package_unit" })
+@Entity({ name: 'package_unit' })
 export class PackageUnitEntity extends BaseEntity {
-  @PrimaryColumn({
-    default: uuidv4()
-  })
+  @PrimaryGeneratedColumn('uuid')
   id: string;
 
   @Column({ unique: true })

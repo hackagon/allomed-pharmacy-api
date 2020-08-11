@@ -1,19 +1,18 @@
 import {
   BaseEntity,
   Entity,
-  PrimaryColumn,
   Column,
   Unique,
   BeforeInsert,
   BeforeUpdate,
+  PrimaryGeneratedColumn,
 } from 'typeorm';
-import { v4 as uuidv4 } from 'uuid';
 import * as bcrypt from 'bcrypt';
 
 @Entity({ name: 'user' })
 @Unique(['email'])
 export class UserEntity extends BaseEntity {
-  @PrimaryColumn({ default: uuidv4() })
+  @PrimaryGeneratedColumn('uuid')
   id: string;
 
   @Column()

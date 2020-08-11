@@ -1,18 +1,17 @@
 import {
   BaseEntity,
-  PrimaryColumn,
   Column,
   Entity,
   ManyToOne,
   OneToMany,
+  PrimaryGeneratedColumn,
 } from 'typeorm';
-import { v4 as uuidv4 } from 'uuid';
 import { ProductEntity } from './product.entity';
 import { Type } from 'class-transformer';
 
 @Entity({ name: 'volume' })
 export class VolumeEntity extends BaseEntity {
-  @PrimaryColumn({ default: uuidv4() })
+  @PrimaryGeneratedColumn('uuid')
   id: string;
 
   @Column({ unique: true })

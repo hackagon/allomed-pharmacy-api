@@ -14,6 +14,8 @@ import {
   VolumeModule,
   ShapeModule,
   UserModule,
+  IngredientModule,
+  PharmacologicalClassModule,
 } from './modules';
 import { CSVToMySQL } from './modules/csv-to-mysql.module';
 
@@ -30,6 +32,8 @@ import { CSVToMySQL } from './modules/csv-to-mysql.module';
     VolumeModule,
     ShapeModule,
     UserModule,
+    IngredientModule,
+    PharmacologicalClassModule,
     CSVToMySQL,
   ],
   controllers: [AppController],
