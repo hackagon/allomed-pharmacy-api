@@ -8,12 +8,15 @@ import {
   CreateDateColumn,
   UpdateDateColumn,
   PrimaryGeneratedColumn,
+  ManyToMany,
+  OneToMany,
 } from 'typeorm';
 import { IngredientEntity } from './ingredient.entity';
 import { ColorEntity } from './color.entity';
 import { VolumeEntity } from './volume.entity';
 import { ShapeEntity } from './shape.entity';
 import { FlavorEntity } from './flavor.entity';
+import { IngredientProductEntity } from './ingredient-product.entity';
 
 @Entity({ name: 'product' })
 export class ProductEntity extends BaseEntity {
@@ -113,4 +116,20 @@ export class ProductEntity extends BaseEntity {
     f => f.products,
   )
   flavor?: FlavorEntity;
+
+  @ManyToMany(
+    type => IngredientEntity,
+    i => i.products,
+  )
+  ingredients?: IngredientEntity[];
+
+  @OneToMany(
+    type => IngredientProductEntity,
+    i => i.productId,
+    {
+      persistence: false,
+      onDelete: 'CASCADE',
+    },
+  )
+  ingredientProduct?: IngredientProductEntity[];
 }
