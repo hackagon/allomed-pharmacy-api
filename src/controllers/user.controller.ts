@@ -9,7 +9,7 @@ import {
 } from '@nestjsx/crud';
 import { UserEntity } from 'src/entities/user.entity';
 import { UserService } from 'src/services/user.service';
-import { UpdateUserDTO, UserCredentialDTO } from 'src/dto/user.dto';
+import { UpdateUserDTO, UserCredentialDTO, LoginDTO } from 'src/dto/user.dto';
 
 @Crud({
   model: {
@@ -51,8 +51,8 @@ export class UserController implements CrudController<UserEntity> {
 
   @Post('login')
   async login(
-    @Body() userCredentialDTO: UserCredentialDTO,
+    @Body() userLoginDTO: LoginDTO,
   ): Promise<{ accessToken: string }> {
-    return this.service.login(userCredentialDTO);
+    return this.service.login(userLoginDTO);
   }
 }

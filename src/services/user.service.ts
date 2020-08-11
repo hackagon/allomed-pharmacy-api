@@ -7,7 +7,7 @@ import {
 import { TypeOrmCrudService } from '@nestjsx/crud-typeorm';
 import { UserEntity } from 'src/entities/user.entity';
 import { InjectRepository } from '@nestjs/typeorm';
-import { UserCredentialDTO } from 'src/dto/user.dto';
+import { UserCredentialDTO, LoginDTO } from 'src/dto/user.dto';
 import { UserRepository } from 'src/repositories/user.repository';
 import { JwtService } from '@nestjs/jwt';
 
@@ -24,10 +24,6 @@ export class UserService extends TypeOrmCrudService<UserEntity> {
 
   async createUser(userCredentialDTO: UserCredentialDTO): Promise<void> {
     const { email, password, full_name = '' } = userCredentialDTO;
-    const found = await this.userRepository.getUser(email);
-
-    if (found) throw new ConflictException('User already exists!');
-
     const newUser = new UserEntity();
 
     newUser.email = email;
@@ -42,13 +38,13 @@ export class UserService extends TypeOrmCrudService<UserEntity> {
   }
 
   async login(
-    userCredentialDTO: UserCredentialDTO,
+    userLoginDTO: LoginDTO,
   ): Promise<{ accessToken: string }> {
-    const found = await this.userRepository.validatePassword(userCredentialDTO);
+    const found = await this.userRepository.validatePassword(userLoginDTO);
 
     if (!found) throw new UnauthorizedException();
 
-    const { email } = userCredentialDTO;
+    const { email } = userLoginDTO;
     const payload = { email };
 
     const accessToken = await this.jwtService.sign(payload);

@@ -1,8 +1,10 @@
-import { IsNotEmpty, IsOptional, IsEmail } from 'class-validator';
+import { IsNotEmpty, IsOptional, IsEmail, Validate } from 'class-validator';
+import { IsEmailUnique } from 'src/validator/isEmailUnique';
 
 export class UserCredentialDTO {
   @IsNotEmpty()
   @IsEmail()
+  @IsEmailUnique()
   email: string;
 
   @IsNotEmpty()
@@ -10,6 +12,15 @@ export class UserCredentialDTO {
 
   @IsOptional()
   full_name: string;
+}
+
+export class LoginDTO {
+  @IsNotEmpty()
+  @IsEmail()
+  email: string;
+
+  @IsNotEmpty()
+  password: string;
 }
 
 export class UpdateUserDTO {}
