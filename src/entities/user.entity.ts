@@ -6,8 +6,10 @@ import {
   BeforeInsert,
   BeforeUpdate,
   PrimaryGeneratedColumn,
+  getManager,
 } from 'typeorm';
 import * as bcrypt from 'bcrypt';
+import { Exclude } from 'class-transformer';
 
 @Entity({ name: 'user' })
 @Unique(['email'])
@@ -19,6 +21,7 @@ export class UserEntity extends BaseEntity {
   email: string;
 
   @Column()
+  @Exclude({ toPlainOnly: true })
   password: string;
 
   @Column()
@@ -27,8 +30,10 @@ export class UserEntity extends BaseEntity {
   @BeforeInsert()
   @BeforeUpdate()
   async hashPassword(): Promise<void> {
-    const salt = await bcrypt.genSalt();
-
-    this.password = await bcrypt.hash(this.password, salt);
+    if (this.password) {
+      console.log('this.email', this.email);
+      const salt = await bcrypt.genSalt();
+      this.password = await bcrypt.hash(this.password, salt);
+    }
   }
 }

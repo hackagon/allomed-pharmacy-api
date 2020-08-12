@@ -5,14 +5,12 @@ import { LoginDTO } from 'src/dto/user.dto';
 
 @EntityRepository(UserEntity)
 export class UserRepository extends Repository<UserEntity> {
-  async validatePassword(userLoginDTO: LoginDTO) {
+  async validatePassword(userLoginDTO: LoginDTO): Promise<boolean> {
     const { email, password } = userLoginDTO;
     const found = await this.findOne({ email });
 
-    if (found && (await bcrypt.compare(password, found.password))) {
-      return found.email;
-    }
+    if (found && (await bcrypt.compare(password, found.password))) return true;
 
-    return null;
+    return false;
   }
 }

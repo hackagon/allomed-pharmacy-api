@@ -45,7 +45,7 @@ export class UserController implements CrudController<UserEntity> {
   @Override('createOneBase')
   async createUser(
     @ParsedBody() userCredentialDTO: UserCredentialDTO,
-  ): Promise<void> {
+  ): Promise<UserEntity> {
     return this.service.createUser(userCredentialDTO);
   }
 

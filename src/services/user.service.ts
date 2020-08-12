@@ -22,32 +22,26 @@ export class UserService extends TypeOrmCrudService<UserEntity> {
     super(repo);
   }
 
-  async createUser(userCredentialDTO: UserCredentialDTO): Promise<void> {
+  async createUser(userCredentialDTO: UserCredentialDTO): Promise<UserEntity> {
     const { email, password, full_name = '' } = userCredentialDTO;
-    const newUser = new UserEntity();
+    const newUser = await this.repo.create({ email, password, full_name });
 
-    newUser.email = email;
-    newUser.password = password;
-    newUser.full_name = full_name;
+    await newUser.save();
 
-    try {
-      await newUser.save();
-    } catch (error) {
-      throw new InternalServerErrorException();
-    }
+    return newUser;
   }
 
-  async login(
-    userLoginDTO: LoginDTO,
-  ): Promise<{ accessToken: string }> {
-    const found = await this.userRepository.validatePassword(userLoginDTO);
+  async login(userLoginDTO: LoginDTO): Promise<{ accessToken: string }> {
+    const isPasswordValidated = await this.userRepository.validatePassword(
+      userLoginDTO,
+    );
 
-    if (!found) throw new UnauthorizedException();
+    if (!isPasswordValidated) throw new UnauthorizedException();
 
     const { email } = userLoginDTO;
     const payload = { email };
 
-    const accessToken = await this.jwtService.sign(payload);
+    const accessToken = this.jwtService.sign(payload);
 
     return { accessToken };
   }

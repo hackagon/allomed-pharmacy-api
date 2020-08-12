@@ -23,4 +23,10 @@ export class LoginDTO {
   password: string;
 }
 
-export class UpdateUserDTO {}
+export class UpdateUserDTO {
+  @IsOptional()
+  password: string;
+
+  @IsOptional()
+  full_name: string;
+}
