@@ -17,6 +17,7 @@ import {
   IngredientModule,
   PharmacologicalClassModule,
   ValidatorModule,
+  UnitModule,
 } from './modules';
 import { CSVToMySQL } from './modules/csv-to-mysql.module';
 
@@ -36,6 +37,7 @@ import { CSVToMySQL } from './modules/csv-to-mysql.module';
     IngredientModule,
     PharmacologicalClassModule,
     ValidatorModule,
+    UnitModule,
     CSVToMySQL,
   ],
   controllers: [AppController],
