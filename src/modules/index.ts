@@ -15,3 +15,4 @@ export * from './validator.module';
 export * from './unit.module';
 export * from './store.module';
 export * from './inventory-header.module';
+export * from './inventory-line.module';
