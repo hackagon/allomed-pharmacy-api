@@ -4,6 +4,8 @@ import {
   PrimaryGeneratedColumn,
   Column,
   Unique,
+  CreateDateColumn,
+  UpdateDateColumn,
 } from 'typeorm';
 
 @Entity({ name: 'store' })
@@ -17,4 +19,10 @@ export class StoreEntity extends BaseEntity {
 
   @Column()
   name: string;
+
+  @CreateDateColumn()
+  created_at: Date;
+
+  @UpdateDateColumn()
+  updated_at: Date;
 }

@@ -6,7 +6,8 @@ import {
   BeforeInsert,
   BeforeUpdate,
   PrimaryGeneratedColumn,
-  getManager,
+  CreateDateColumn,
+  UpdateDateColumn,
 } from 'typeorm';
 import * as bcrypt from 'bcrypt';
 import { Exclude } from 'class-transformer';
@@ -26,6 +27,12 @@ export class UserEntity extends BaseEntity {
 
   @Column()
   full_name: string;
+
+  @CreateDateColumn()
+  created_at: Date;
+
+  @UpdateDateColumn()
+  updated_at: Date;
 
   @BeforeInsert()
   @BeforeUpdate()

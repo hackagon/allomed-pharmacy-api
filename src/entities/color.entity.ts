@@ -1,4 +1,12 @@
-import { BaseEntity, Entity, Column, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
+import {
+  BaseEntity,
+  Entity,
+  Column,
+  OneToMany,
+  PrimaryGeneratedColumn,
+  CreateDateColumn,
+  UpdateDateColumn,
+} from 'typeorm';
 import { ProductEntity } from './product.entity';
 import { Type } from 'class-transformer';
 
@@ -15,6 +23,12 @@ export class ColorEntity extends BaseEntity {
 
   @Column({ unique: true })
   vn_name: string;
+
+  @CreateDateColumn()
+  created_at: Date;
+
+  @UpdateDateColumn()
+  updated_at: Date;
 
   @OneToMany(
     type => ProductEntity,

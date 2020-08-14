@@ -8,6 +8,8 @@ import {
   ManyToMany,
   JoinTable,
   OneToMany,
+  CreateDateColumn,
+  UpdateDateColumn,
 } from 'typeorm';
 import { PharmacologicalClassEntity } from './pharmacological-class.entity';
 import { ProductEntity } from './product.entity';
@@ -27,6 +29,12 @@ export class IngredientEntity extends BaseEntity {
 
   @Column()
   unii: string;
+
+  @CreateDateColumn()
+  created_at: Date;
+
+  @UpdateDateColumn()
+  updated_at: Date;
 
   @Column()
   pharmacological_class_id: string;

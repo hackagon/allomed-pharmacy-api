@@ -4,6 +4,8 @@ import {
   PrimaryGeneratedColumn,
   Column,
   Unique,
+  CreateDateColumn,
+  UpdateDateColumn,
 } from 'typeorm';
 
 @Entity({ name: 'unit' })
@@ -20,4 +22,10 @@ export class UnitEntity extends BaseEntity {
 
   @Column()
   vn_name: string;
+
+  @CreateDateColumn()
+  created_at: Date;
+
+  @UpdateDateColumn()
+  updated_at: Date;
 }
