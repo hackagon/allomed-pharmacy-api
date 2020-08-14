@@ -13,3 +13,4 @@ export * from './ingredient.module';
 export * from './pharmacological-class.module';
 export * from './validator.module';
 export * from './unit.module';
+export * from './store.module';
