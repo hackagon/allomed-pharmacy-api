@@ -10,3 +10,4 @@ export * from './ingredient.controller';
 export * from './pharmacological-class.controller';
 export * from './unit.controller';
 export * from './store.controller';
+export * from './inventory-header.controller';
