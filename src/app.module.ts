@@ -21,6 +21,7 @@ import {
   StoreModule,
   InventoryHeaderModule,
   InventoryLineModule,
+  ConversionModule,
 } from './modules';
 import { CSVToMySQL } from './modules/csv-to-mysql.module';
 
@@ -44,6 +45,7 @@ import { CSVToMySQL } from './modules/csv-to-mysql.module';
     StoreModule,
     InventoryHeaderModule,
     InventoryLineModule,
+    ConversionModule,
     CSVToMySQL,
   ],
   controllers: [AppController],
