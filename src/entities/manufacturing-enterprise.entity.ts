@@ -1,20 +1,19 @@
 import {
   Entity,
   Column,
-  PrimaryColumn,
   BaseEntity,
   CreateDateColumn,
   UpdateDateColumn,
   OneToMany,
+  PrimaryGeneratedColumn,
 } from 'typeorm';
-import { v4 as uuidv4 } from 'uuid';
 import * as _ from 'lodash';
 import { InventoryEntity } from './inventory.entity';
 import { Type } from 'class-transformer';
 
 @Entity({ name: 'manufacturing_enterprise' })
 export class ManufacturingEnterpriseEntity extends BaseEntity {
-  @PrimaryColumn({ default: uuidv4() })
+  @PrimaryGeneratedColumn('uuid')
   id: string;
 
   @Column()
