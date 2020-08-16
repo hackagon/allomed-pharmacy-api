@@ -7,7 +7,9 @@ import {
   UpdateDateColumn,
   BeforeInsert,
   BeforeUpdate,
+  ManyToOne,
 } from 'typeorm';
+import { InventoryEntity } from './inventory.entity';
 
 @Entity({ name: 'inventory_line' })
 export class InventoryLineEntity extends BaseEntity {
@@ -56,9 +58,19 @@ export class InventoryLineEntity extends BaseEntity {
   @UpdateDateColumn()
   updated_at: Date;
 
+  @Column()
+  inventory_id: string;
+
   @BeforeInsert()
   @BeforeUpdate()
   getExchangeUnitPrice() {
     this.exchange_unit_price = this.invoice_unit_price / this.exchange_quantity;
   }
+
+  @ManyToOne(
+    type => InventoryEntity,
+    i => i.inventoryLines,
+    { onDelete: 'CASCADE' },
+  )
+  inventory?: InventoryEntity;
 }

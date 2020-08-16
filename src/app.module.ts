@@ -19,7 +19,7 @@ import {
   ValidatorModule,
   UnitModule,
   StoreModule,
-  InventoryHeaderModule,
+  InventoryModule,
   InventoryLineModule,
   ConversionModule,
 } from './modules';
@@ -43,7 +43,7 @@ import { CSVToMySQL } from './modules/csv-to-mysql.module';
     ValidatorModule,
     UnitModule,
     StoreModule,
-    InventoryHeaderModule,
+    InventoryModule,
     InventoryLineModule,
     ConversionModule,
     CSVToMySQL,

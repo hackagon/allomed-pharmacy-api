@@ -14,6 +14,6 @@ export * from './pharmacological-class.module';
 export * from './validator.module';
 export * from './unit.module';
 export * from './store.module';
-export * from './inventory-header.module';
+export * from './inventory.module';
 export * from './inventory-line.module';
 export * from './conversion.module';

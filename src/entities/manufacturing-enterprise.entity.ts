@@ -1,8 +1,18 @@
-import { Entity, Column, PrimaryColumn, BaseEntity, CreateDateColumn, UpdateDateColumn } from "typeorm";
-import { v4 as uuidv4 } from 'uuid'
-import * as _ from "lodash";
+import {
+  Entity,
+  Column,
+  PrimaryColumn,
+  BaseEntity,
+  CreateDateColumn,
+  UpdateDateColumn,
+  OneToMany,
+} from 'typeorm';
+import { v4 as uuidv4 } from 'uuid';
+import * as _ from 'lodash';
+import { InventoryEntity } from './inventory.entity';
+import { Type } from 'class-transformer';
 
-@Entity({ name: "manufacturing_enterprise" })
+@Entity({ name: 'manufacturing_enterprise' })
 export class ManufacturingEnterpriseEntity extends BaseEntity {
   @PrimaryColumn({ default: uuidv4() })
   id: string;
@@ -10,7 +20,7 @@ export class ManufacturingEnterpriseEntity extends BaseEntity {
   @Column()
   name: string;
 
-  @Column({ name: "short_name" })
+  @Column({ name: 'short_name' })
   short_name: string;
 
   @Column()
@@ -30,6 +40,14 @@ export class ManufacturingEnterpriseEntity extends BaseEntity {
 
   @UpdateDateColumn()
   updated_at: Date;
+
+  @OneToMany(
+    type => InventoryEntity,
+    i => i.provide_enterprise_id,
+    { cascade: true },
+  )
+  @Type(type => InventoryEntity)
+  inventories: InventoryEntity[];
 
   constructor(partial: Partial<ManufacturingEnterpriseEntity>) {
     super();

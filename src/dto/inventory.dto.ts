@@ -1,6 +1,6 @@
 import { IsNotEmpty, IsOptional } from 'class-validator';
 
-export class CreateInventoryHeaderDTO {
+export class CreateInventoryDTO {
   @IsNotEmpty()
   code: string;
 
@@ -14,7 +14,7 @@ export class CreateInventoryHeaderDTO {
   delivery_date: Date;
 }
 
-export class UpdateInventoryHeaderDTO {
+export class UpdateInventoryDTO {
   @IsOptional()
   code: string;
 
