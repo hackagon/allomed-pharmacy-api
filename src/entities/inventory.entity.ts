@@ -13,6 +13,7 @@ import { StoreEntity } from './store.entity';
 import { InventoryLineEntity } from './inventory-line.entity';
 import { Type } from 'class-transformer';
 import { ManufacturingEnterpriseEntity } from './manufacturing-enterprise.entity';
+import { UserEntity } from './user.entity';
 
 @Entity({ name: 'inventory' })
 @Unique(['code'])
@@ -44,6 +45,9 @@ export class InventoryEntity extends BaseEntity {
   @Column()
   provide_enterprise_id: string;
 
+  @Column()
+  user_id: string;
+
   @ManyToOne(
     type => StoreEntity,
     s => s.inventories,
@@ -65,4 +69,11 @@ export class InventoryEntity extends BaseEntity {
     { onDelete: 'SET NULL' },
   )
   enterprise?: ManufacturingEnterpriseEntity;
+
+  @ManyToOne(
+    type => UserEntity,
+    u => u.inventories,
+    { onDelete: 'SET NULL' },
+  )
+  user?: UserEntity;
 }

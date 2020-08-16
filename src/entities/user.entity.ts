@@ -8,9 +8,11 @@ import {
   PrimaryGeneratedColumn,
   CreateDateColumn,
   UpdateDateColumn,
+  OneToMany,
 } from 'typeorm';
 import * as bcrypt from 'bcrypt';
-import { Exclude } from 'class-transformer';
+import { Exclude, Type } from 'class-transformer';
+import { InventoryEntity } from './inventory.entity';
 
 @Entity({ name: 'user' })
 @Unique(['email'])
@@ -43,4 +45,12 @@ export class UserEntity extends BaseEntity {
       this.password = await bcrypt.hash(this.password, salt);
     }
   }
+
+  @OneToMany(
+    type => InventoryEntity,
+    i => i.user_id,
+    { cascade: true },
+  )
+  @Type(type => InventoryEntity)
+  inventories: InventoryEntity[];
 }
