@@ -17,3 +17,4 @@ export * from './store.module';
 export * from './inventory.module';
 export * from './inventory-line.module';
 export * from './conversion.module';
+export * from './inventory-storing.module';

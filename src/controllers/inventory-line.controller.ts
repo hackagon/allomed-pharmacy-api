@@ -13,6 +13,8 @@ import {
   CreateInventoryLineDTO,
   UpdateInventoryLineDTO,
 } from 'src/dto/inventory-line.dto';
+import { getManager } from 'typeorm';
+import { CreateInventoryStoringDTO } from 'src/dto/inventory-storing.dto';
 
 @Crud({
   model: {
@@ -41,4 +43,22 @@ import {
 export class InventoryLineController
   implements CrudController<InventoryLineEntity> {
   constructor(public service: InventoryLineService) {}
+
+  get base(): CrudController<InventoryLineEntity> {
+    return this;
+  }
+
+  @Override()
+  async createOne(
+    @ParsedRequest() req: CrudRequest,
+    @ParsedBody() dto: InventoryLineEntity,
+  ) {
+    const inventoryStoringEntity = getManager().getRepository(
+      'inventory_storing',
+    );
+
+    // await inventoryStoringEntity.create(new CreateInventoryStoringDTO());
+
+    return this.base.createOneBase(req, dto);
+  }
 }
