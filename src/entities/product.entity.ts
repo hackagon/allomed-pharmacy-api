@@ -16,6 +16,8 @@ import { VolumeEntity } from './volume.entity';
 import { ShapeEntity } from './shape.entity';
 import { FlavorEntity } from './flavor.entity';
 import { IngredientProductEntity } from './ingredient-product.entity';
+import { InventoryLineEntity } from './inventory-line.entity';
+import { Type } from 'class-transformer';
 
 @Entity({ name: 'product' })
 export class ProductEntity extends BaseEntity {
@@ -124,4 +126,12 @@ export class ProductEntity extends BaseEntity {
     },
   )
   ingredientProduct?: IngredientProductEntity[];
+
+  @OneToMany(
+    type => InventoryLineEntity,
+    iL => iL.product_id,
+    {cascade: true}
+  )
+  @Type(type => InventoryLineEntity)
+  inventoryLines: InventoryLineEntity[];
 }

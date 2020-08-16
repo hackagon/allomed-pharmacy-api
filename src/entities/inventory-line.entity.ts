@@ -10,6 +10,9 @@ import {
   ManyToOne,
 } from 'typeorm';
 import { InventoryEntity } from './inventory.entity';
+import { ConversionEntity } from './conversion.entity';
+import { ProductEntity } from './product.entity';
+import { UserEntity } from './user.entity';
 
 @Entity({ name: 'inventory_line' })
 export class InventoryLineEntity extends BaseEntity {
@@ -61,6 +64,15 @@ export class InventoryLineEntity extends BaseEntity {
   @Column()
   inventory_id: string;
 
+  @Column()
+  conversion_id: string;
+
+  @Column()
+  product_id: string;
+
+  @Column()
+  user_id: string;
+
   @BeforeInsert()
   @BeforeUpdate()
   getExchangeUnitPrice() {
@@ -73,4 +85,25 @@ export class InventoryLineEntity extends BaseEntity {
     { onDelete: 'CASCADE' },
   )
   inventory?: InventoryEntity;
+
+  @ManyToOne(
+    type => ConversionEntity,
+    c => c.inventoryLines,
+    { onDelete: 'SET NULL' },
+  )
+  conversion?: ConversionEntity;
+
+  @ManyToOne(
+    type => ProductEntity,
+    p => p.inventoryLines,
+    { onDelete: 'CASCADE' },
+  )
+  product?: ProductEntity;
+
+  @ManyToOne(
+    type => UserEntity,
+    u => u.inventoryLines,
+    { onDelete: 'SET NULL' },
+  )
+  user?: UserEntity;
 }

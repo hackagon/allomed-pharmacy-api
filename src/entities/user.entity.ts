@@ -13,6 +13,7 @@ import {
 import * as bcrypt from 'bcrypt';
 import { Exclude, Type } from 'class-transformer';
 import { InventoryEntity } from './inventory.entity';
+import { InventoryLineEntity } from './inventory-line.entity';
 
 @Entity({ name: 'user' })
 @Unique(['email'])
@@ -53,4 +54,12 @@ export class UserEntity extends BaseEntity {
   )
   @Type(type => InventoryEntity)
   inventories: InventoryEntity[];
+
+  @OneToMany(
+    type => InventoryLineEntity,
+    iL => iL.user_id,
+    { cascade: true },
+  )
+  @Type(type => InventoryLineEntity)
+  inventoryLines: InventoryLineEntity[];
 }

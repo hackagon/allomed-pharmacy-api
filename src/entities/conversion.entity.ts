@@ -5,7 +5,10 @@ import {
   Column,
   CreateDateColumn,
   UpdateDateColumn,
+  OneToMany,
 } from 'typeorm';
+import { InventoryLineEntity } from './inventory-line.entity';
+import { Type } from 'class-transformer';
 
 @Entity({ name: 'conversion' })
 export class ConversionEntity extends BaseEntity {
@@ -26,4 +29,12 @@ export class ConversionEntity extends BaseEntity {
 
   @UpdateDateColumn()
   updated_at: Date;
+
+  @OneToMany(
+    type => InventoryLineEntity,
+    iL => iL.conversion_id,
+    { cascade: true },
+  )
+  @Type(type => InventoryLineEntity)
+  inventoryLines: InventoryLineEntity[];
 }

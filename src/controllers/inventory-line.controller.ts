@@ -14,7 +14,6 @@ import {
   UpdateInventoryLineDTO,
 } from 'src/dto/inventory-line.dto';
 import { getManager } from 'typeorm';
-import { CreateInventoryStoringDTO } from 'src/dto/inventory-storing.dto';
 
 @Crud({
   model: {

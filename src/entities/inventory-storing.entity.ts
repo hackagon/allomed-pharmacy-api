@@ -12,19 +12,19 @@ export class InventoryStoringEntity extends BaseEntity {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
-  @Column()
+  @Column({ default: 0 })
   month: number;
 
-  @Column()
+  @Column({ default: 0 })
   year: number;
 
-  @Column()
+  @Column({ default: 0 })
   existing_quantity: number;
 
   @Column()
   import_quantity: number;
 
-  @Column()
+  @Column({ default: 0 })
   export_quantity: number;
 
   @CreateDateColumn()
