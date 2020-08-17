@@ -96,7 +96,7 @@ export class InventoryLineEntity extends BaseEntity {
   @ManyToOne(
     type => ProductEntity,
     p => p.inventoryLines,
-    { onDelete: 'CASCADE' },
+    { onDelete: 'SET NULL' },
   )
   product?: ProductEntity;
 

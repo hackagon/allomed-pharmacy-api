@@ -130,7 +130,7 @@ export class ProductEntity extends BaseEntity {
   @OneToMany(
     type => InventoryLineEntity,
     iL => iL.product_id,
-    {cascade: true}
+    { cascade: true },
   )
   @Type(type => InventoryLineEntity)
   inventoryLines: InventoryLineEntity[];
