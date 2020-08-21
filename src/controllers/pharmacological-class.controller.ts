@@ -29,6 +29,13 @@ import {
       returnDeleted: true,
     },
   },
+  query: {
+    join: {
+      ingredients: {
+        eager: true
+      },
+    },
+  },
 })
 @Controller('pharmacological-classes')
 export class PharmacologicalClassController

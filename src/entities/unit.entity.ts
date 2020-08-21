@@ -34,15 +34,15 @@ export class UnitEntity extends BaseEntity {
 
   @OneToMany(
     type => ConversionEntity,
-    c => c.unit_from_id,
+    c => c.from_unit_id,
   )
   @Type(type => ConversionEntity)
-  conversion_from: ConversionEntity[];
+  from_conversions: ConversionEntity[];
 
   @OneToMany(
     type => ConversionEntity,
-    c => c.unit_to_id,
+    c => c.to_unit_id,
   )
   @Type(type => ConversionEntity)
-  conversion_to: ConversionEntity[];
+  to_conversions: ConversionEntity[];
 }

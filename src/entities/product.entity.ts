@@ -111,21 +111,21 @@ export class ProductEntity extends BaseEntity {
   )
   flavor?: FlavorEntity;
 
-  @ManyToMany(
-    type => IngredientEntity,
-    i => i.products,
-  )
-  ingredients?: IngredientEntity[];
+  // @ManyToMany(
+  //   type => IngredientEntity,
+  //   i => i.products,
+  // )
+  // ingredients?: IngredientEntity[];
 
-  @OneToMany(
-    type => IngredientProductEntity,
-    i => i.productId,
-    {
-      persistence: false,
-      onDelete: 'CASCADE',
-    },
-  )
-  ingredientProduct?: IngredientProductEntity[];
+  // @OneToMany(
+  //   type => IngredientProductEntity,
+  //   i => i.productId,
+  //   {
+  //     persistence: false,
+  //     onDelete: 'CASCADE',
+  //   },
+  // )
+  // ingredientProduct?: IngredientProductEntity[];
 
   @OneToMany(
     type => InventoryLineEntity,

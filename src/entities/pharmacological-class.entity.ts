@@ -26,7 +26,7 @@ export class PharmacologicalClassEntity extends BaseEntity {
 
   @OneToMany(
     type => IngredientEntity,
-    i => i.pharmacological_class_id,
+    i => i.pharmacological_class,
   )
   @Type(type => IngredientEntity)
   ingredients: IngredientEntity[];

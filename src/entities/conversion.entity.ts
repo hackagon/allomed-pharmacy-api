@@ -33,10 +33,10 @@ export class ConversionEntity extends BaseEntity {
   updated_at: Date;
 
   @Column()
-  unit_from_id: string;
+  from_unit_id: string;
 
   @Column()
-  unit_to_id: string;
+  to_unit_id: string;
 
   @OneToMany(
     type => InventoryLineEntity,
@@ -48,13 +48,13 @@ export class ConversionEntity extends BaseEntity {
 
   @ManyToOne(
     type => UnitEntity,
-    u => u.conversion_from,
+    u => u.from_conversions,
   )
   unitFrom?: UnitEntity;
 
   @ManyToOne(
     type => UnitEntity,
-    u => u.conversion_to,
+    u => u.to_conversions,
   )
   unitTo?: UnitEntity;
 }

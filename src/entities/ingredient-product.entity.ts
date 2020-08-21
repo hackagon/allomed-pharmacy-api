@@ -1,4 +1,11 @@
-import { BaseEntity, Entity, PrimaryColumn, ManyToOne } from 'typeorm';
+import {
+  BaseEntity,
+  Entity,
+  PrimaryColumn,
+  ManyToOne,
+  CreateDateColumn,
+  UpdateDateColumn,
+} from 'typeorm';
 import { ProductEntity } from './product.entity';
 import { IngredientEntity } from './ingredient.entity';
 
@@ -10,15 +17,21 @@ export class IngredientProductEntity extends BaseEntity {
   @PrimaryColumn()
   public productId!: string;
 
-  @ManyToOne(
-    type => ProductEntity,
-    p => p.ingredientProduct,
-  )
-  public product: ProductEntity;
+  @CreateDateColumn()
+  created_at: Date;
 
-  @ManyToOne(
-    type => IngredientEntity,
-    i => i.ingredientProduct,
-  )
-  public ingredient: IngredientEntity;
+  @UpdateDateColumn()
+  updated_at: Date;
+
+  // @ManyToOne(
+  //   type => ProductEntity,
+  //   p => p.ingredientProduct,
+  // )
+  // public product: ProductEntity;
+
+  // @ManyToOne(
+  //   type => IngredientEntity,
+  //   i => i.ingredientProduct,
+  // )
+  // public ingredient: IngredientEntity;
 }

@@ -8,6 +8,7 @@ import {
   BeforeInsert,
   BeforeUpdate,
   ManyToOne,
+  JoinColumn,
 } from 'typeorm';
 import { InventoryEntity } from './inventory.entity';
 import { ConversionEntity } from './conversion.entity';
@@ -84,6 +85,7 @@ export class InventoryLineEntity extends BaseEntity {
     i => i.inventoryLines,
     { onDelete: 'CASCADE' },
   )
+  @JoinColumn({ name: 'inventory_id', referencedColumnName: 'id' })
   inventory?: InventoryEntity;
 
   @ManyToOne(
