@@ -26,6 +26,16 @@ import { CreateUnitDTO, UpdateUnitDTO } from 'src/dto/unit.dto';
       returnDeleted: true,
     },
   },
+  query: {
+    join: {
+      from_conversions: {
+        eager: true,
+      },
+      to_conversions: {
+        eager: true,
+      },
+    },
+  },
 })
 @Controller('units')
 export class UnitController implements CrudController<UnitEntity> {

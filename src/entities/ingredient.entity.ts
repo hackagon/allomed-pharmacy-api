@@ -40,9 +40,10 @@ export class IngredientEntity extends BaseEntity {
   @ManyToOne(
     type => PharmacologicalClassEntity,
     p => p.ingredients,
+    { onDelete: 'SET NULL' },
   )
   @JoinColumn({ name: 'pharmacological_class_id', referencedColumnName: 'id' })
-  pharmacological_class_id: PharmacologicalClassEntity;
+  pharmacological_class_id: string;
 
   // @ManyToMany(
   //   type => ProductEntity,

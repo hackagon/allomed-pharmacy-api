@@ -35,6 +35,7 @@ export class UnitEntity extends BaseEntity {
   @OneToMany(
     type => ConversionEntity,
     c => c.from_unit_id,
+    { cascade: true },
   )
   @Type(type => ConversionEntity)
   from_conversions: ConversionEntity[];
@@ -42,6 +43,7 @@ export class UnitEntity extends BaseEntity {
   @OneToMany(
     type => ConversionEntity,
     c => c.to_unit_id,
+    { cascade: true },
   )
   @Type(type => ConversionEntity)
   to_conversions: ConversionEntity[];

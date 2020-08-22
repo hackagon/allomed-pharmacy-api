@@ -29,6 +29,16 @@ import {
       returnDeleted: true,
     },
   },
+  query: {
+    join: {
+      from_unit_id: {
+        eager: true,
+      },
+      to_unit_id: {
+        eager: true,
+      },
+    },
+  },
 })
 @Controller('conversions')
 export class ConversionController implements CrudController<ConversionEntity> {

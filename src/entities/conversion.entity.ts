@@ -7,6 +7,7 @@ import {
   UpdateDateColumn,
   OneToMany,
   ManyToOne,
+  JoinColumn,
 } from 'typeorm';
 import { InventoryLineEntity } from './inventory-line.entity';
 import { Type } from 'class-transformer';
@@ -32,12 +33,6 @@ export class ConversionEntity extends BaseEntity {
   @UpdateDateColumn()
   updated_at: Date;
 
-  @Column()
-  from_unit_id: string;
-
-  @Column()
-  to_unit_id: string;
-
   @OneToMany(
     type => InventoryLineEntity,
     iL => iL.conversion_id,
@@ -49,12 +44,16 @@ export class ConversionEntity extends BaseEntity {
   @ManyToOne(
     type => UnitEntity,
     u => u.from_conversions,
+    { onDelete: 'SET NULL' },
   )
-  unitFrom?: UnitEntity;
+  @JoinColumn({ name: 'from_unit_id', referencedColumnName: 'id' })
+  from_unit_id: string;
 
   @ManyToOne(
     type => UnitEntity,
     u => u.to_conversions,
+    { onDelete: 'SET NULL' },
   )
-  unitTo?: UnitEntity;
+  @JoinColumn({ name: 'to_unit_id', referencedColumnName: 'id' })
+  to_unit_id: string;
 }
