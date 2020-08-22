@@ -32,7 +32,7 @@ import {
   query: {
     join: {
       ingredients: {
-        eager: true
+        eager: true,
       },
     },
   },

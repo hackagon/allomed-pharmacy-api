@@ -29,6 +29,13 @@ import {
       returnDeleted: true,
     },
   },
+  query: {
+    join: {
+      pharmacological_class_id: {
+        eager: true,
+      },
+    },
+  },
 })
 @Controller('ingredients')
 export class IngredientController implements CrudController<IngredientEntity> {

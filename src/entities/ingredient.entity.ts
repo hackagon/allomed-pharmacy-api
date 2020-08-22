@@ -37,15 +37,12 @@ export class IngredientEntity extends BaseEntity {
   @UpdateDateColumn()
   updated_at: Date;
 
-  @Column()
-  pharmacological_class_id?: string = '';
-
   @ManyToOne(
     type => PharmacologicalClassEntity,
     p => p.ingredients,
   )
-  // @JoinColumn({ name: 'pharmacological_class_id', referencedColumnName: 'id' })
-  pharmacological_class?: PharmacologicalClassEntity;
+  @JoinColumn({ name: 'pharmacological_class_id', referencedColumnName: 'id' })
+  pharmacological_class_id: PharmacologicalClassEntity;
 
   // @ManyToMany(
   //   type => ProductEntity,
