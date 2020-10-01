@@ -1,8 +1,9 @@
 import * as path from "path";
 
-const envPath = path.join(__dirname, `../../.env.${process.env.NODE_ENV}`)
+const envPath = path.join(__dirname, `../../.env.${process.env.NODE_ENV || "development"}`)
 
 require("dotenv").config({ path: envPath })
+
 
 export const config = {
   type: process.env.DB_TYPE,

@@ -46,21 +46,18 @@ export class ProductEntity extends BaseEntity {
   dosage_unit_id: string;
 
   @Column()
-  package_unit_id: string;
+  package_unit_id: string; // don vi dong goi
 
   @Column()
-  dosage_form_id: string;
+  dosage_form_id: string; // dang bao che 
 
-  @Column() // unit_id ???
-  package_id: string;
+  @Column()
+  package_id: string; // quy cach dong goi
 
   @Column()
   manufacturing_enterprise_id: string;
 
-  @Column()
-  manufacturing_country_id: string;
-
-  @Column() // product_classification ????
+  @Column() // phan loai duoc
   product_classification_id: string;
 
   @Column()
@@ -74,9 +71,6 @@ export class ProductEntity extends BaseEntity {
 
   @Column()
   flavor_id: string;
-
-  @Column()
-  odor_id: string;
 
   @Column()
   volume_id: string;
